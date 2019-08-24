@@ -31,10 +31,10 @@ class GroupObjToolTest {
 	}
 	
 	@Test
-	void removeObjByNameFromGroupTest() {
+	void removeObjFromGroupTest() {
 		testGroup.add(obj);
 		testGroup.add(obj2);
-		GroupObjTool.removeObjByNameFromGroup(obj, testGroup);
+		GroupObjTool.removeObjFromGroup(obj, testGroup);
 		assertEquals(testGroup.get(0), obj2);
 	}
 	
