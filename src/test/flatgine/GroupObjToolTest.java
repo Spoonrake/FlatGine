@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import com.flatgine.GroupObjTool;
 import com.flatgine.objectsys.Object;
 
-class GroupsObjToolTest {
+class GroupObjToolTest {
 
 	static final ArrayList<Object> testGroup = new ArrayList<Object>();
 	static final Object obj = new Object();
