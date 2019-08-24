@@ -13,6 +13,7 @@ public class Camera {
 		setY(y);
 	}
 	
+	//TODO make objectsGroup in argument
 	public void moveToCoord(int x, int y) {
 		decreaseXBy(x);
 		decreaseYBy(y);
