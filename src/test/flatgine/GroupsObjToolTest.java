@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.flatgine.GroupsObjTool;
+import com.flatgine.GroupObjTool;
 import com.flatgine.objectsys.Object;
 
 class GroupsObjToolTest {
@@ -26,7 +26,7 @@ class GroupsObjToolTest {
 	
 	@Test
 	void addObjToGroupTest() {
-		GroupsObjTool.addObjToGroup(obj, testGroup);
+		GroupObjTool.addObjToGroup(obj, testGroup);
 		assertEquals(testGroup.get(0), obj);
 	}
 	
@@ -34,7 +34,7 @@ class GroupsObjToolTest {
 	void removeObjByNameFromGroupTest() {
 		testGroup.add(obj);
 		testGroup.add(obj2);
-		GroupsObjTool.removeObjByNameFromGroup(obj, testGroup);
+		GroupObjTool.removeObjByNameFromGroup(obj, testGroup);
 		assertEquals(testGroup.get(0), obj2);
 	}
 	
@@ -42,7 +42,7 @@ class GroupsObjToolTest {
 	void removeAllObjFromGroup() throws IndexOutOfBoundsException{
 		testGroup.add(obj);
 		testGroup.add(obj2);
-		GroupsObjTool.removeAllObjFromGroup(testGroup);
+		GroupObjTool.removeAllObjFromGroup(testGroup);
 		Throwable thrown = assertThrows(IndexOutOfBoundsException.class, () -> {
 			testGroup.get(0);
 		});
