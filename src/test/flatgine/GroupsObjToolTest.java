@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.flatgine.GroupsObjTool;
@@ -13,11 +14,25 @@ class GroupsObjToolTest {
 
 	static final ArrayList<Object> testGroup = new ArrayList<Object>();
 	static final Object obj = new Object();
+	static final Object obj2 = new Object();
+	
+	@BeforeEach
+	public void setup() {
+		testGroup.clear();
+	}
 	
 	@Test
 	void addObjToGroupTest() {
 		GroupsObjTool.addObjToGroup(obj, testGroup);
 		assertEquals(testGroup.get(0), obj);
+	}
+	
+	@Test
+	void removeObjByNameFromGroupTest() {
+		testGroup.add(obj);
+		testGroup.add(obj2);
+		GroupsObjTool.removeObjByNameFromGroup(obj, testGroup);
+		assertEquals(testGroup.get(0), obj2);
 	}
 
 }
