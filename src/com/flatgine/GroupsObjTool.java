@@ -12,4 +12,8 @@ public class GroupsObjTool {
 	public static void removeObjByNameFromGroup(Object obj, ArrayList<Object> group) {
 		group.remove(group.indexOf(obj));
 	}
+	
+	public static void removeAllObjFromGroup(ArrayList<Object> group) {
+		group.clear();
+	}
 }

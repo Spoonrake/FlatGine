@@ -1,6 +1,8 @@
 package test.flatgine;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 
@@ -15,6 +17,7 @@ class GroupsObjToolTest {
 	static final ArrayList<Object> testGroup = new ArrayList<Object>();
 	static final Object obj = new Object();
 	static final Object obj2 = new Object();
+	
 	
 	@BeforeEach
 	public void setup() {
@@ -33,6 +36,17 @@ class GroupsObjToolTest {
 		testGroup.add(obj2);
 		GroupsObjTool.removeObjByNameFromGroup(obj, testGroup);
 		assertEquals(testGroup.get(0), obj2);
+	}
+	
+	@Test
+	void removeAllObjFromGroup() throws IndexOutOfBoundsException{
+		testGroup.add(obj);
+		testGroup.add(obj2);
+		GroupsObjTool.removeAllObjFromGroup(testGroup);
+		Throwable thrown = assertThrows(IndexOutOfBoundsException.class, () -> {
+			testGroup.get(0);
+		});
+		assertNotNull(thrown.getMessage());
 	}
 
 }
