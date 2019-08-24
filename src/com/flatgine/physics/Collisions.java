@@ -3,6 +3,12 @@ package com.flatgine.physics;
 import com.flatgine.objectsys.Object;
 
 public class Collisions {
+	
+	public static boolean hasCollisionComplex( Object obj1, Object obj2){
+		if(hasCollisionVertical(obj1,obj2) & hasCollisionHorizontal(obj1,obj2)){return true;}
+		else{return false;}
+	}
+	
 	private static boolean hasCollisionVertical(Object obj1,Object obj2) {
 
         int obj2Ex = obj2.getX()+obj2.getWidth();
@@ -19,11 +25,4 @@ public class Collisions {
         else {return false;} 
     }
     
-    
-  //������� ����������� �� ������������ ��� �������. ���������� true, ���� ���� ������ ��������� � ������ ��� ���������� � ���
-  //������� ������������ ������������ �� ����������� ����������� (�� ����������� ����������� ������)
-    public static boolean hasCollisionComplex( Object obj1, Object obj2){
-		if(hasCollisionVertical(obj1,obj2) & hasCollisionHorizontal(obj1,obj2)){return true;}
-		else{return false;}
-	}
 }
