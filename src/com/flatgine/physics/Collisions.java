@@ -3,7 +3,7 @@ package com.flatgine.physics;
 import com.flatgine.objectsys.Object;
 
 public class Collisions {
-	public static boolean hasCollisionVertical(Object obj1,Object obj2) {
+	private static boolean hasCollisionVertical(Object obj1,Object obj2) {
 
         int obj2Ex = obj2.getX()+obj2.getWidth();
         int obj1Ex = obj1.getX()+obj1.getWidth();
@@ -11,7 +11,7 @@ public class Collisions {
 
         else{return false;}
     }
-    public static boolean hasCollisionHorizontal  (Object obj1, Object obj2) {
+    private static boolean hasCollisionHorizontal  (Object obj1, Object obj2) {
 
         int obj2Ey = obj2.getY() + obj2.getHeight();
         int obj1Ey = obj1.getY() + obj1.getHeight();
